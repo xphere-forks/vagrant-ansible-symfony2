@@ -10,8 +10,7 @@ Vagrant::Config.run do |config|
 
     web_config.vm.provision :ansible do |ansible|
       ansible.playbook = "devops/webserver.yml"
-      ansible.hosts = "webservers"
-      ansible.inventory_file = "devops/hosts"
+      ansible.inventory_path = "devops/hosts"
     end
   end
 
@@ -24,8 +23,7 @@ Vagrant::Config.run do |config|
 
     db_config.vm.provision :ansible do |ansible|
       ansible.playbook = "devops/dbserver.yml"
-      ansible.hosts = "dbservers"
-      ansible.inventory_file = "devops/hosts"
+      ansible.inventory_path = "devops/hosts"
     end
   end
 
