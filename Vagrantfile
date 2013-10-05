@@ -6,7 +6,7 @@ Vagrant::Config.run do |config|
     web_config.vm.forward_port 80, 8080
     web_config.vm.forward_port 443, 4443
     web_config.vm.network :bridged
-    web_config.vm.network :hostonly, "192.168.100.10"
+    web_config.vm.network :hostonly, "192.168.2.10"
 
     web_config.vm.provision :ansible do |ansible|
       ansible.playbook = "devops/webserver.yml"
@@ -20,7 +20,7 @@ Vagrant::Config.run do |config|
     db_config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
     db_config.vm.forward_port 3306, 33306
     db_config.vm.network :bridged
-    db_config.vm.network :hostonly, "192.168.100.20"
+    db_config.vm.network :hostonly, "192.168.2.20"
 
     db_config.vm.provision :ansible do |ansible|
       ansible.playbook = "devops/dbserver.yml"

@@ -5,7 +5,7 @@
   user: vagrant
 
   vars:
-    app_webserver_ip: 192.168.100.10
+    app_webserver_ip: 192.168.2.10
 
   vars_files:
     - variables.yml
