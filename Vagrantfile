@@ -10,6 +10,7 @@ Vagrant.configure("2") do |setup|
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "devops/webserver.yml"
       ansible.inventory_path = "devops/hosts"
+      ansible.verbose = "v"
     end
   end
 
@@ -22,6 +23,7 @@ Vagrant.configure("2") do |setup|
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "devops/dbserver.yml"
       ansible.inventory_path = "devops/hosts"
+      ansible.verbose = "v"
     end
   end
 
