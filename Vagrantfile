@@ -6,6 +6,7 @@ Vagrant.configure("2") do |setup|
     config.vm.box_url = box
     config.vm.network :private_network, ip: "192.168.2.10"
     config.vm.network :public_network
+    config.vm.synced_folder "..", "/projects", :nfs => true
 
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "devops/webserver.yml"
